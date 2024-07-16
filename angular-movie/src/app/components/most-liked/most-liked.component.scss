@@ -1,0 +1,17 @@
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-self: center;
+    padding: 1.25rem;
+}
+
+.rank {
+    display: inline-block;
+    border: 0.08rem solid var(--surface-300);
+    border-radius: 0.5rem;
+    background-color: var(--surface-300);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}

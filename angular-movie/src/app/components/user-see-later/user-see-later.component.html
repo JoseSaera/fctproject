@@ -1,0 +1,8 @@
+<div class="title">
+    <h3>See Later</h3>
+    <div class="cards">
+        @for (movie of seeLaterMovies; track movie.id) {
+        <app-movie-card [movie]="movie"></app-movie-card>
+        }
+    </div>
+</div>

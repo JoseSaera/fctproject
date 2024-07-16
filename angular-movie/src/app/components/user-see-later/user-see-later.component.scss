@@ -1,0 +1,13 @@
+.title h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-self: center;
+    padding: 1.25rem;
+}

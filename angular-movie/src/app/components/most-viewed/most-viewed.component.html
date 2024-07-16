@@ -1,0 +1,8 @@
+<div class="cards">
+    @for (movie of moviePage.content; track movie.id; let index = $index) {
+    <div class="card-container">
+        <div class="rank"># {{ index + 1 }}</div>
+        <app-movie-card [movie]="movie"></app-movie-card>
+    </div>
+    }
+</div>

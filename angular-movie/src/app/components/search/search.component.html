@@ -1,0 +1,21 @@
+<div>
+    <div class="search-bar">
+        <input
+            type="text"
+            [(ngModel)]="searchTitle"
+            (input)="onSearch($event)"
+            [placeholder]="currentSearchPlaceholder"
+            (focus)="onSearchFocus()"
+            (blur)="onSearchBlur()"
+        />
+    </div>
+
+    <div class="cards">
+        @for (movie of movies; track movie.id) {
+        <app-movie-card [movie]="movie"></app-movie-card>
+        }
+    </div>
+    <div class="show-more" [class.hidden]="!isButtonVisible">
+        <p (click)="showMore()">Show more</p>
+    </div>
+</div>

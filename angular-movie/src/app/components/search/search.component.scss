@@ -1,0 +1,44 @@
+.search-bar {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.search-bar input {
+    font-size: 1.25rem;
+    border: 0.05rem solid var(--surface-300);
+    border-radius: 0.5rem;
+    background-color: var(--surface-50);
+    box-shadow: 0 0 0.2rem var(--surface-300);
+    outline: none;
+    padding: 0.3rem;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-self: center;
+    padding: 1.25rem;
+}
+
+.show-more {
+    display: flex;
+    justify-content: center;
+}
+
+.show-more p {
+    color: blue;
+    cursor: pointer;
+}
+
+.show-more p:hover {
+    text-decoration: underline;
+    color: lightblue;
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}

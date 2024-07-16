@@ -1,0 +1,9 @@
+<div>
+    <p-splitButton
+        label="{{ (username$ | async) || 'Guest' }}"
+        icon="pi pi-user"
+        [model]="items"
+        severity="secondary"
+        outlined
+    ></p-splitButton>
+</div>

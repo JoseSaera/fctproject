@@ -1,0 +1,156 @@
+.movie-card {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    border: 0.05rem transparent var(--surface-300);
+    border-radius: 0.5rem;
+    background-color: var(--surface-100);
+    box-shadow: 0 0 0.5rem var(--surface-400);
+    font-size: 0.7rem;
+    width: 24rem;
+    height: 12rem;
+    position: relative;
+}
+
+.movie-content {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 15% 10% 15% 55% 5%;
+}
+
+.movie-image {
+    grid-column: 2;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 12rem;
+    position: relative;
+}
+
+.movie-image img {
+    height: 100%;
+    width: auto;
+    transition: opacity 0.3s ease;
+}
+
+.movie-image:hover img {
+    opacity: 0.2;
+}
+
+.title,
+.year,
+.overview,
+.vote-average,
+.genres {
+    margin: 0;
+    padding: 0.8rem;
+}
+
+.year,
+.genres {
+    display: flex;
+    align-items: center;
+}
+
+.rank {
+    border: 0.08rem solid var(--surface-200);
+    border-radius: 0.5rem;
+    background-color: var(--surface-50);
+}
+
+.title {
+    grid-column: 1;
+    grid-row: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 3rem;
+}
+
+.year {
+    grid-column: 1;
+    grid-row: 2;
+    height: 1.5rem;
+}
+
+.genres {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    height: 1.4rem;
+}
+
+.genre {
+    background-color: var(--surface-200);
+    border: 0.08rem solid var(--surface-400);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    font-size: 0.6rem;
+}
+
+.vote-average-container {
+    grid-column: 2;
+    grid-row: 1;
+    display: inline-flex;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    background-color: var(--surface-400);
+    margin-top: 0.8rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.vote-average {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.overview {
+    grid-column: span 2;
+    grid-row: 4;
+    font-style: italic;
+    height: calc(12rem * 0.49);
+    overflow-y: scroll;
+}
+
+.icon-overlay {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1.5rem;
+
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.icon-eye {
+    color: var(--pink-50);
+}
+
+.icon-heart {
+    color: var(--pink-200);
+}
+
+.icon-overlay i {
+    text-shadow: 0 0 0.1rem var(--surface-900);
+    transform: scale(1.5);
+}
+
+.icon-overlay i:hover {
+    color: var(--cyan-400);
+}
+
+.movie-image:hover .icon-overlay {
+    opacity: 1;
+}

@@ -1,0 +1,21 @@
+<div class="body-container">
+    <p-floatLabel>
+        <p-dropdown
+            [options]="genres"
+            [(ngModel)]="selectedGenre"
+            optionLabel="name"
+            (ngModelChange)="onSelectChange()"
+            inputId="float-label"
+        /><label class="select-label" for="float-label">Select a Genre</label>
+    </p-floatLabel>
+
+    <div class="chart-container">
+        <p-chart
+            type="bar"
+            width="100%"
+            height="100%"
+            [data]="chartData"
+            [options]="chartOptions"
+        />
+    </div>
+</div>

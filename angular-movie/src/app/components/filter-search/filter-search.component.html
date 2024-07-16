@@ -1,0 +1,27 @@
+<div>
+    <app-filter-bar
+        [genres]="genres"
+        [selectedGenres]="selectedGenres"
+        [yearRange]="yearRange"
+        [selectedMinYear]="selectedMinYear"
+        [selectedMaxYear]="selectedMaxYear"
+        (filterChange)="onFilterChange($event)"
+    ></app-filter-bar>
+
+    <div class="search-bar">
+        <input
+            type="text"
+            [(ngModel)]="searchText"
+            (input)="onSearchInput()"
+            [placeholder]="currentSearchPlaceholder"
+            (focus)="onSearchFocus()"
+            (blur)="onSearchBlur()"
+        />
+    </div>
+
+    <div class="cards">
+        @for (movie of movies; track movie.id) {
+        <app-movie-card [movie]="movie"></app-movie-card>
+        }
+    </div>
+</div>

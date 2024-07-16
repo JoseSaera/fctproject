@@ -1,0 +1,21 @@
+URLs
+H2 db:
+localhost:8080/h2-console/
+JDBC URL: jdbc:h2:mem:testdb
+Descargar generos:
+http://localhost:8080/fetch-data/genres
+Descargar peliculas:
+http://localhost:8080/fetch-data/movies
+
+
+Buscador por nombre
+
+Sacar lista Top10 populares, Top10 nota
+
+Graficos año/genero, nota/genero
+
+http://localhost:8080/fetch-data/movies?year=1950
+http://localhost:8080/movies/count/note/min/8/max/9/genreId?id=18
+
+....
+ALTER TABLE public.movie ALTER COLUMN release_date TYPE DATE USING release_date::date;

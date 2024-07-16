@@ -1,0 +1,44 @@
+<div class="filter-bar">
+    <div class="genres">
+        <button
+            class="genre-all-button"
+            (click)="toogleBtnAll()"
+            (input)="onGenresChange()"
+        >
+            {{ btnAllName }}
+        </button>
+
+        @for(genre of genres; track genre.id) {
+        <button
+            class="genre-button"
+            (click)="toogleGenreSelection(genre.id)"
+            (input)="onGenresChange()"
+            [class.selected]="isSelected(genre.id)"
+        >
+            {{ genre.name }}
+        </button>
+        }
+    </div>
+    <div class="years">
+        <div class="year-label">Select years between:</div>
+        <div class="year-range">
+            <input
+                type="number"
+                [(ngModel)]="selectedMinYear"
+                (input)="onYearsChange($event, true, false)"
+                [min]="yearRange.minYear"
+                [max]="yearRange.maxYear"
+                (blur)="onYearsChange($event, true, true)"
+            />
+            <p>-</p>
+            <input
+                type="number"
+                [(ngModel)]="selectedMaxYear"
+                (input)="onYearsChange($event, false, false)"
+                [min]="yearRange.minYear"
+                [max]="yearRange.maxYear"
+                (blur)="onYearsChange($event, false, true)"
+            />
+        </div>
+    </div>
+</div>

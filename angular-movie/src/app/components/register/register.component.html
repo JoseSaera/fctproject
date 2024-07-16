@@ -1,0 +1,64 @@
+<div class="register">
+    <h2>Register</h2>
+    <form (ngSubmit)="register()" class="form-register">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input
+                type="text"
+                id="name"
+                [(ngModel)]="name"
+                name="name"
+                required
+                (input)="isValidName()"
+            />
+
+            @if (!validName) {
+            <div class="warning">
+                <p>*Must be max 10 characters long and contain only letters.</p>
+            </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input
+                type="text"
+                id="username"
+                [(ngModel)]="username"
+                name="username"
+                (input)="isValidUsername()"
+                required
+            />
+            @if (!validUsername) {
+            <div class="warning">
+                <p>
+                    *Must be 4 to 10 characters long, contain only letters and
+                    numbers.
+                </p>
+            </div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                [(ngModel)]="password"
+                name="password"
+                (input)="isValidPassword()"
+                required
+            />
+
+            @if (!validPassword) {
+            <div class="warning">
+                <p>
+                    *Must be 6 to 10 characters long, contain at least one
+                    uppercase letter, one number, and one special character.
+                </p>
+            </div>
+            }
+            <button type="submit">Register</button>
+        </div>
+    </form>
+</div>

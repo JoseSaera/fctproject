@@ -1,0 +1,50 @@
+<div class="movie-card">
+    <div class="movie-content">
+        <div class="title-container">
+            <h2 class="title">{{ movie.title }}</h2>
+        </div>
+        <div class="year">{{ getReleaseYear() }}</div>
+        <div class="genres">
+            @for(genre of movie.genresDTO; track genre.id) { @if($index < 3) {
+            <div class="genre">{{ genre.name }}</div>
+            } }
+        </div>
+        <div class="vote-average-container">
+            <div class="vote-average" [ngStyle]="{ color: getColor() }">
+                {{ formatNumber(movie.vote_average) }}
+            </div>
+        </div>
+        <div class="overview">{{ movie.overview }}</div>
+    </div>
+    <div class="movie-image" [ngClass]="{ authenticated: isLoggedIn$ | async }">
+        <img [src]="getImagePath()" alt="Image" />
+        @if(isLoggedIn$ | async) {
+        <div class="icon-overlay">
+            <i
+                [ngClass]="getFavoriteIconClass(movie.id)"
+                (click)="toggleFavorites(movie.id)"
+                pTooltip="{{
+                    isFavorite(movie.id)
+                        ? 'Remove from favorites'
+                        : 'Add to favorites'
+                }}"
+                tooltipPosition="top"
+                tooltipEvent="hover"
+                tooltipDelay="2000"
+            ></i>
+            <i
+                [ngClass]="getSeeLaterIconClass(movie.id)"
+                (click)="toggleSeeLater(movie.id)"
+                pTooltip="{{
+                    isSeeLater(movie.id)
+                        ? 'Remove from see later'
+                        : 'Add to see later'
+                }}"
+                tooltipPosition="top"
+                tooltipEvent="hover"
+                tooltipDelay="2000"
+            ></i>
+        </div>
+        }
+    </div>
+</div>

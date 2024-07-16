@@ -1,0 +1,15 @@
+<p-menubar [model]="items">
+    <ng-template pTemplate="item" let-item>
+        <ng-container>
+            <a [routerLink]="item.route" class="p-menuitem-link">
+                <span class="ml-2">{{ item.label }}</span>
+            </a>
+        </ng-container>
+    </ng-template>
+    <div class="options">
+        <app-user-item></app-user-item>
+        <div class="light-dark-btn" (click)="toggleDarkLightMode()">
+            <i [class]="icon"></i>
+        </div>
+    </div>
+</p-menubar>

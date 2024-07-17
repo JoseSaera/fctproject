@@ -12,7 +12,6 @@ import { UserService } from '../../services/user/user.service';
 })
 export class MovieCardComponent {
     @Input() movie!: MovieDTO;
-    private notImageUrl = environment.notImageUrl;
     isLoggedIn$: Observable<boolean>;
     favorites: number[] = [];
     seeLater: number[] = [];
@@ -42,9 +41,6 @@ export class MovieCardComponent {
     }
 
     getImagePath(): string {
-        if (this.movie.poster_path === null) {
-            this.movie.poster_url = this.notImageUrl;
-        }
         return this.movie.poster_url;
     }
 

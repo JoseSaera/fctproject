@@ -9,7 +9,7 @@ import { environment } from '../../../environment';
     providedIn: 'root',
 })
 export class MovieService {
-    private moviesUrl = environment.moviesUrl;
+    private moviesUrl = `${environment.apiUrl}/movies`;
 
     constructor(private http: HttpClient) {}
 

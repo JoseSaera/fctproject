@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jasaera</groupId>
-	<artifactId>external-api-service</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>external-api-service</name>
+	<artifactId>movie-service</artifactId>
+	<version>0.0.1</version>
+	<name>movie-service</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>22</java.version>

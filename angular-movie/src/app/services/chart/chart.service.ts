@@ -8,7 +8,7 @@ import { MovieCountByYear } from '../../interfaces/dto';
     providedIn: 'root',
 })
 export class ChartService {
-    private moviesUrl = environment.moviesUrl;
+    private moviesUrl = `${environment.apiUrl}/movies`;
 
     constructor(private http: HttpClient) {}
 

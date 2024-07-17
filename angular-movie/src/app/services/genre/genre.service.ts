@@ -8,7 +8,7 @@ import { GenreDTO } from '../../interfaces/dto';
     providedIn: 'root',
 })
 export class GenreService {
-    private genresUrl = environment.genresUrl;
+    private genresUrl = `${environment.apiUrl}/genres`;
 
     constructor(private http: HttpClient) {}
 

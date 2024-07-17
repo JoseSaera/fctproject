@@ -1,3 +1,4 @@
 export const environment = {
-    apiUrl: 'https://jsaera-moviepedia.onrender.com',
+    production: false,
+    apiUrl: 'http://localhost:8080',
 };

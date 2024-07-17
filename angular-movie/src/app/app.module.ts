@@ -36,6 +36,8 @@ import { UserSeeLaterComponent } from './components/user-see-later/user-see-late
 import { UserFavoritesComponent } from './components/user-favorites/user-favorites.component';
 import { UserService } from './services/user/user.service';
 import { AuthInterceptor } from './authinterceptor.interceptor';
+import { AppRoutingModule } from '../app-routing.module';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -67,6 +69,7 @@ import { AuthInterceptor } from './authinterceptor.interceptor';
         DropdownModule,
         FloatLabelModule,
         SplitButtonModule,
+        AppRoutingModule,
     ],
     providers: [
         provideAnimationsAsync('noop'),

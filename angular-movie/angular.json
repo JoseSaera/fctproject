@@ -15,11 +15,11 @@
             "prefix": "app",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:application",
+                    "builder": "@angular-devkit/build-angular:browser",
                     "options": {
                         "outputPath": "dist/angular-movie",
                         "index": "src/index.html",
-                        "browser": "src/main.ts",
+                        "main": "src/main.ts",
                         "polyfills": ["zone.js"],
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
@@ -53,12 +53,20 @@
                                     "maximumError": "4kb"
                                 }
                             ],
-                            "outputHashing": "all"
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true
                         },
                         "development": {
                             "optimization": false,
                             "extractLicenses": false,
-                            "sourceMap": true
+                            "sourceMap": true,
+                            "namedChunks": true
                         }
                     },
                     "defaultConfiguration": "production"
@@ -78,7 +86,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "buildTarget": "angular-movie:build"
+                        "browserTarget": "angular-movie:build"
                     }
                 },
                 "test": {

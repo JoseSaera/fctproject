@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { MovieDTO } from '../../interfaces/dto';
-import { environment } from '../../../environment';
 import { AuthService } from '../../services/auth/auth.service';
 import { Observable } from 'rxjs';
 import { UserService } from '../../services/user/user.service';
